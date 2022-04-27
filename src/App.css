@@ -7,6 +7,16 @@
   pointer-events: none;
 }
 
+@font-face {
+  font-family: "Nunito-Black";
+  src: url(./fonts/Nunito-Black.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito-Regular";
+  src: url(./fonts/Nunito-Regular.ttf) format("truetype");
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
