@@ -1,0 +1,30 @@
+.search-bar {
+    flex: 1;
+    padding: 0 2rem;
+    max-width: 70rem;
+    font-family: 'Nunito-Regular';
+}
+
+.search-icon {
+    cursor: pointer;
+}
+
+input {
+    font-size: 1.6rem;
+    border-bottom-color: #7A7A7A;
+}
+
+label {
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+        margin-top: 0.5rem!important;
+        flex: unset;
+        order: 2;
+    }
+}
+
+

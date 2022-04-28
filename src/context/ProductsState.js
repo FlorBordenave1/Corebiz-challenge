@@ -11,10 +11,8 @@ const ProductsState = ({ children }) => {
     const getProducts = async () => {
         try {
             const res = await axios.get(url);
-
             if (res.status === 200 || res.status === 201) {
-                setProducts(res.data.data)
-                console.log('respuesta', res)
+                setProducts(res.data)
             }
         } catch (e) {
             console.log(e)

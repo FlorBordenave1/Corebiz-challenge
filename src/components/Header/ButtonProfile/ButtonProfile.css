@@ -1,0 +1,21 @@
+.profile-icon-container {
+    display: flex;
+    align-items: center;
+    margin: 0 2.4rem;
+    font-family: 'Nunito';
+    font-size: 18px;
+    color: #7a7a7a;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #000;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .mobile { 
+        display: none;
+    }
+}

@@ -1,10 +1,16 @@
-import './App.css';
-import Home from './pages/Home';
+import React from 'react'
+import Home from './pages/Home'
+import ProductsState from './context/ProductsState'
 
-function App() {
+
+export default function App() {
+
   return (
-    <Home />
-  );
-}
+    <div>
+      <ProductsState>
+        <Home />
+      </ProductsState>
+    </div>
 
-export default App;
+  )
+}
