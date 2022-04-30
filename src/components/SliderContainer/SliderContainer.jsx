@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PorductCard from "../PorductCard/PorductCard"
+import "./SliderContainer.css"
 
-const ArticleGallery = ({ products }) => {
+const SliderContainer = ({ products }) => {
 
     const settings = {
         dots: false,
@@ -42,28 +43,32 @@ const ArticleGallery = ({ products }) => {
     };
 
     return (
-        <section>
-            <h2> Mas Vendidos </h2>
-            <Slider {...settings}>
-                {
-                    products?.map((product, i) => (
-                        <PorductCard
-                            image={product.imageUrl}
-                            key={i}
-                            listPrice={product.listPrice}
-                            productName={product.productName}
-                            price={product.price}
-                            quantity={product.installments[0]?.quantity}
-                            quantityValue={product.installments[0]?.value}
-                            stars={product.stars}
-                        />
+        <div className="slider-container">
+            <div className="slider-content">
 
-                    ))
-                }
-            </Slider>
-        </section>
+
+                <h2> Mas Vendidos </h2>
+                <Slider {...settings}>
+                    {
+                        products?.map((product, i) => (
+                            <PorductCard
+                                image={product.imageUrl}
+                                key={i}
+                                listPrice={product.listPrice}
+                                productName={product.productName}
+                                price={product.price}
+                                quantity={product.installments[0]?.quantity}
+                                quantityValue={product.installments[0]?.value}
+                                stars={product.stars}
+                            />
+
+                        ))
+                    }
+                </Slider>
+            </div>
+        </div>
     )
 }
 
 
-export default ArticleGallery
+export default SliderContainer

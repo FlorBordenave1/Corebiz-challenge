@@ -9,13 +9,13 @@ import { ShoppingCart } from "./ButtonShoppingCart/ShoppingCart"
 export default function Header() {
     return (
         <header className="header">
-            <div className="navbar-container">
+            <nav className="navbar-container">
                 <ButtonMobile />
                 <img src={Logo} className="logo" alt="logo" />
                 <SearchBar />
                 <ButtonProfile />
                 <ShoppingCart />
-            </div>
+            </nav>
         </header>
     )
 } 

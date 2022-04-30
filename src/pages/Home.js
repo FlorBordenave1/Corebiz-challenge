@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react"
 
 //Components
-import ArticleGallery from "../components/ArticleGallery/ArticleGallery"
+import ArticleGallery from "../components/SliderContainer/SliderContainer"
+import Banner from "../components/Banner/Banner"
 import Layout from "../components/Layout/Layout"
 import NewsLetter from "../components/NewsLetter/NewsLetter"
-import PagePresentation from "../components/PagePresentation/PagePresentation"
-import Slider from "../components/Slider/Slider"
+import SliderContainer from "../components/SliderContainer/SliderContainer"
 
 //context
 import PorductsContext from "../context/ProductsContext"
@@ -24,8 +24,9 @@ export default function Home() {
 
     return (
         <Layout>
-            {/* <PagePresentation />
-            <Slider />
+            <Banner />
+            <SliderContainer products={products} />
+            {/*  
             <ArticleGallery
                 products={products}
             />

@@ -1,0 +1,12 @@
+.slider-container {
+    margin-top: -10rem;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-content{
+    width: 70%;  
+}
