@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import PorductCard from "../PorductCard/PorductCard"
+import ProductCard from "../PorductCard/ProductCard";
 import "./SliderContainer.css"
 
 const SliderContainer = ({ products }) => {
@@ -42,26 +42,34 @@ const SliderContainer = ({ products }) => {
         ]
     };
 
+    const precioFormatter = (number) => {
+        let price = '';
+        for (let i = 0; i < number?.length; i++) {
+            price = number.slice(0, number.length - 2) + '.' + number.slice(number.length - 2)
+        }
+        return price
+    }
+
+    console.log('products', products)
+
     return (
         <div className="slider-container">
             <div className="slider-content">
-
-
                 <h2> Mas Vendidos </h2>
                 <Slider {...settings}>
                     {
-                        products?.map((product, i) => (
-                            <PorductCard
-                                image={product.imageUrl}
+                        products?.map(({ imageUrl, listPrice, productName, price, installments, stars }, i) => (
+                            <ProductCard
+                                image={imageUrl}
                                 key={i}
-                                listPrice={product.listPrice}
-                                productName={product.productName}
-                                price={product.price}
-                                quantity={product.installments[0]?.quantity}
-                                quantityValue={product.installments[0]?.value}
-                                stars={product.stars}
+                                listPrice={listPrice}
+                                productName={productName}
+                                price={price}
+                                quantity={installments[0]?.quantity}
+                                quantityValue={installments[0]?.value}
+                                rating={stars}
+                                precioFormatter={precioFormatter}
                             />
-
                         ))
                     }
                 </Slider>
