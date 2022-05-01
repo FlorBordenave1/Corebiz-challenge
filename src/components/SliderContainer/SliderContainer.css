@@ -1,5 +1,6 @@
 .slider-container {
     margin-top: -10rem;
+    margin-bottom: 2rem;
     width: 100%; 
     display: flex;
     align-items: center;
@@ -7,5 +8,28 @@
 }
 
 .slider-content{
-    width: 70%;  
+    width: 80%;  
+}
+
+.slider-line-decoration{
+    height: 4px;
+    width: 80px;
+    background-color: #C0C0C0;
+    margin: -8px 0px 16px 0px;
+}
+
+@media (max-width: 768px) { 
+
+    .slider-container {
+        margin-top: 6rem; 
+    }
+
+    .slider-content{
+        width: 90%;  
+    }
+
+    .slider-line-decoration{ 
+        width: 40px; 
+        margin: -6px 0px 8px 0px;
+    }
 }

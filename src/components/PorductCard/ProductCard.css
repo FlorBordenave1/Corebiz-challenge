@@ -1,6 +1,6 @@
 .article-container{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -8,23 +8,22 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 216px;
 }
 
 .article-content:hover{
-    background-color: #E6E8EA;
-    width: 100%;
+    background-color: #E6E8EA; 
 }
 
 .article-image{
     height: 200px;
-    width: 216;
+    width: 100%;
 }
 
 .article-name{ 
     font-size: 12px;
     color: #7A7A7A;
     font-family: 'Nunito', sans-serif;
-   
 }
 
 .article-price, .article-price-fee{
@@ -42,4 +41,21 @@
 
 .off{
     text-decoration:line-through;
+}
+
+@media (max-width: 768px) { 
+    .article-image{
+        height: 151px;
+        width: 163px;
+    }
+    .article-image{
+        height: 200px;
+        width: 180px;
+    }
+    .article-name{ 
+        font-size: 10px; 
+    }
+    .article-content{ 
+        width: 180px;
+    }
 }

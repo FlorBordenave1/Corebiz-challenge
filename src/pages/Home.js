@@ -1,22 +1,16 @@
 import { useContext, useEffect } from "react"
-
-//Components
-import ArticleGallery from "../components/SliderContainer/SliderContainer"
+//Components 
 import Banner from "../components/Banner/Banner"
 import Layout from "../components/Layout/Layout"
 import NewsLetter from "../components/NewsLetter/NewsLetter"
 import SliderContainer from "../components/SliderContainer/SliderContainer"
-
 //context
-import PorductsContext from "../context/ProductsContext"
-
-
+import PorductsContext from "../context/ProductsContext/ProductsContext"
 
 export default function Home() {
 
     const productsContext = useContext(PorductsContext)
     const { products, getProducts } = productsContext
-
 
     useEffect(() => {
         getProducts()
@@ -26,11 +20,7 @@ export default function Home() {
         <Layout>
             <Banner />
             <SliderContainer products={products} />
-            {/*  
-            <ArticleGallery
-                products={products}
-            />
-            <NewsLetter /> */}
+            <NewsLetter />
         </Layout>
     )
 }

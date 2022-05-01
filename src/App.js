@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
-import ProductsState from './context/ProductsState'
+import ProductsState from './context/ProductsContext/ProductsState'
+import SubscribeState from "./context/SubscribeContext/SubscribeState"
 
 
 export default function App() {
@@ -8,7 +9,9 @@ export default function App() {
   return (
     <div>
       <ProductsState>
-        <Home />
+        <SubscribeState>
+          <Home />
+        </SubscribeState>
       </ProductsState>
     </div>
 

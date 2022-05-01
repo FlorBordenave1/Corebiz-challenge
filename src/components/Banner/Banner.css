@@ -14,14 +14,13 @@
 } 
 
 .title-container {
-   
+    height: 70%;
     width: 50%;
     display: flex;  
     justify-content: center;
 }
 
-.banner-content { 
-    height: 280px;  
+.banner-content {  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,6 +49,10 @@
      
 
 @media (max-width: 768px) {
+
+    .banner-container { 
+        height: 200px;  
+    }
             
     .banner-img {
         width: 100%;

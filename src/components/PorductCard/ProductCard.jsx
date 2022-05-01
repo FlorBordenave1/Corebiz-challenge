@@ -18,8 +18,6 @@ export default function ProductCard({
 
     return (
 
-
-
         // si listprice que me aprique el estilo con el OFF sino el que no tiene
         <article key={key} className="article-container">
 

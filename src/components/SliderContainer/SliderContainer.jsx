@@ -28,14 +28,14 @@ const SliderContainer = ({ products }) => {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     initialSlide: 2
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
@@ -50,12 +50,11 @@ const SliderContainer = ({ products }) => {
         return price
     }
 
-    console.log('products', products)
-
     return (
         <div className="slider-container">
             <div className="slider-content">
                 <h2> Mas Vendidos </h2>
+                <div className="slider-line-decoration"></div>
                 <Slider {...settings}>
                     {
                         products?.map(({ imageUrl, listPrice, productName, price, installments, stars }, i) => (
