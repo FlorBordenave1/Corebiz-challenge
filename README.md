@@ -7,6 +7,7 @@ El sitio esta creado utilizando create-react-app. El desarrollo fue mediante HTM
 <li> React-Hook-Form </li>
 <li> Material UI </li>
 <li> Axios </li>
+<li> Swal </li>
 
  <br/>
 
