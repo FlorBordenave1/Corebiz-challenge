@@ -6,11 +6,10 @@
 .footer-container {
     padding: 2rem;
     display: flex;  
-    justify-content: space-between;  
+    justify-content: space-around;  
 }
 
-.footer-text-container{
-    font-family:'Nunito', 'sans-serif'; 
+.footer-text-container{ 
     color: #FFF; 
 }
 
@@ -23,6 +22,7 @@
 
 .footer-info-container{
     font-size: 13px;
+    font-weight: 200;
 }
 
 .footer-buttons-container {

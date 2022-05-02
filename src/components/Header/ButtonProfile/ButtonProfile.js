@@ -7,7 +7,7 @@ export default function ButtonProfile() {
     return (
         <div className='profile-icon-container mobile' >
             <FaRegUser className="icon" />
-            Mi Cuenta
+            <span>Mi cuenta</span>
         </div>
     )
 }

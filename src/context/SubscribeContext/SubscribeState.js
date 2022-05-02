@@ -1,5 +1,7 @@
 import axios from "axios";
 import SubscribeContext from "./SubscribeContext";
+import swal from "sweetalert";
+
 
 const SubscribeState = ({ children }) => {
 
@@ -13,7 +15,14 @@ const SubscribeState = ({ children }) => {
 
         try {
             const res = await axios.post(url, JSON.parse(body));
-            console.log(body)
+            if (res.status === 200 || res.status === 201) {
+                swal({
+                    title: "Suscripción exitosa!",
+                    text: "La suscripción se ha realizado correctamente!",
+                    icon: "success",
+                });
+            }
+
         } catch (e) {
             console.log(e)
         }

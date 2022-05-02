@@ -7,6 +7,8 @@ import "./SliderContainer.css"
 import ProductCard from "../PorductCard/ProductCard";
 import ProductsContext from "../../context/ProductsContext/ProductsContext";
 import AlertNewProduct from "../PorductCard/AlertProduct/AlertNewProduct"
+import PrevArrow from "./PrevArrow/PrevArrow";
+import NextArrow from "./NextArrow/NextArrow";
 
 const SliderContainer = ({ products }) => {
 
@@ -40,7 +42,9 @@ const SliderContainer = ({ products }) => {
                     slidesToScroll: 1
                 }
             }
-        ]
+        ],
+        prevArrow: <PrevArrow />,
+        nextArrow: <NextArrow />
     };
 
     const { countProducts, setCountProducts, searchingProducts, search } = useContext(ProductsContext)

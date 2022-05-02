@@ -11,7 +11,7 @@ export default function NewsLetterForm({ onSubmit }) {
                 <input
                     type="text"
                     className="form"
-                    placeholder="ingresa tu mail"
+                    placeholder="Ingresa tu mail"
                     {...register('email', {
                         required: true,
                         pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
@@ -24,7 +24,7 @@ export default function NewsLetterForm({ onSubmit }) {
                 <input
                     type="text"
                     className="form"
-                    placeholder="ingresa tu nombre"
+                    placeholder="Ingresa tu nombre"
                     {...register('name', {
                         required: true,
                         minLength: 5

@@ -32,8 +32,8 @@ const ProductsState = ({ children }) => {
     };
 
     const searchingProducts = (search) => {
-        return function (x) {
-            const names = x.productName.toLowerCase()
+        return (product) => {
+            const names = product.productName.toLowerCase()
             return names.includes(search) || !search;
         };
     };
