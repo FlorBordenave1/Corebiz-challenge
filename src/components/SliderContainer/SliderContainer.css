@@ -11,6 +11,12 @@
     width: 80%;  
 }
 
+.slider-title{
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
 .slider-line-decoration{
     height: 4px;
     width: 80px;

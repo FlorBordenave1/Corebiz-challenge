@@ -13,7 +13,6 @@ export default function BasicRating({ value }) {
                     color: "#F8475F",
                 },
             }}
-
         />
     );
 }

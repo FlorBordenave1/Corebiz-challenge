@@ -2,7 +2,7 @@ import React from 'react'
 import { FaRegUser } from 'react-icons/fa'
 import './ButtonProfile.css'
 
-export const ButtonProfile = () => {
+export default function ButtonProfile() {
 
     return (
         <div className='profile-icon-container mobile' >

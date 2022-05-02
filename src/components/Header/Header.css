@@ -21,14 +21,14 @@
 }
 
     
-    @media (max-width: 768px) {
-        .navbar-container {
-            flex-wrap: wrap; 
-            padding: 1rem;  
-            justify-content: space-between;
-        }
-        .logo {
-            margin-right: 0;
-            width: 14rem;
-        } 
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-wrap: wrap; 
+        padding: 1rem;  
+        justify-content: space-between;
     }
+    .logo {
+        margin-right: 0;
+        width: 14rem;
+    } 
+}

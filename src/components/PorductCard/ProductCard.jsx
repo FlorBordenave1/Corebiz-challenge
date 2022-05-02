@@ -5,6 +5,7 @@ import CardButton from "./CardButton/CardButton"
 import RatingProducts from "./RatingProduct/RatingProduct"
 
 export default function ProductCard({
+    addNewProduct,
     image,
     key,
     listPrice,
@@ -14,16 +15,19 @@ export default function ProductCard({
     quantityValue,
     rating,
     precioFormatter,
+    handleClickOpen,
 }) {
 
     return (
 
-        // si listprice que me aprique el estilo con el OFF sino el que no tiene
         <article key={key} className="article-container">
+            <div className={listPrice && "on-sale-container"}>
+                {listPrice && <div className="on-sale"><p>OFF</p></div>}
 
-            <img src={image} alt={productName} className="article-image" />
+                <img src={image} alt={productName} className="article-image" />
+            </div>
 
-            <body className="article-content">
+            <div className="article-content">
                 <h3 className="article-name"> {productName} </h3>
                 <RatingProducts value={rating} />
                 <p
@@ -41,8 +45,13 @@ export default function ProductCard({
                     <p className="article-price-fee">{`o en ${quantity} de R $${quantityValue}`}</p>
                     : null
                 }
-                <CardButton />
-            </body>
+                <CardButton
+                    onClick={addNewProduct}
+                    handleClickOpen={handleClickOpen}
+                    name={productName}
+                    price={listPrice ? listPrice : price}
+                />
+            </div>
         </article>
     )
 }

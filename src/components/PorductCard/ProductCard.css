@@ -17,7 +17,7 @@
 
 .article-image{
     height: 200px;
-    width: 100%;
+    width: 216px;
 }
 
 .article-name{ 
@@ -43,6 +43,26 @@
     text-decoration:line-through;
 }
 
+.on-sale-container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.on-sale {
+    width: 6rem;
+    height: 6rem;
+    background-color: #F8475F;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+    position: absolute;
+    top: 0;  
+    text-align: right;
+    padding-right: 1rem;
+    color: white;
+    font-weight: 800;  
+    font-size: 16px;
+}
+
 @media (max-width: 768px) { 
     .article-image{
         height: 151px;
@@ -57,5 +77,11 @@
     }
     .article-content{ 
         width: 180px;
+    }
+    .on-sale{ 
+        width: 6rem;
+        height: 6rem; 
+        font-weight: 600;  
+        font-size: 14px; 
     }
 }

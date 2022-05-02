@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ProductCard from "../PorductCard/ProductCard";
 import "./SliderContainer.css"
+//components
+import ProductCard from "../PorductCard/ProductCard";
+import ProductsContext from "../../context/ProductsContext/ProductsContext";
+import AlertNewProduct from "../PorductCard/AlertProduct/AlertNewProduct"
 
 const SliderContainer = ({ products }) => {
 
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
@@ -20,7 +23,6 @@ const SliderContainer = ({ products }) => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: true,
                     dots: true
                 }
             },
@@ -29,7 +31,6 @@ const SliderContainer = ({ products }) => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    initialSlide: 2
                 }
             },
             {
@@ -42,6 +43,11 @@ const SliderContainer = ({ products }) => {
         ]
     };
 
+    const { countProducts, setCountProducts, searchingProducts, search } = useContext(ProductsContext)
+
+    const [open, setOpen] = useState(false);
+    const [dataProduct, setDataProduct] = useState({ name: '', price: '' })
+
     const precioFormatter = (number) => {
         let price = '';
         for (let i = 0; i < number?.length; i++) {
@@ -50,32 +56,50 @@ const SliderContainer = ({ products }) => {
         return price
     }
 
+    const addNewProduct = () => {
+        setCountProducts(countProducts => countProducts + 1)
+        localStorage.setItem('countProducts', countProducts + 1)
+    }
+
+    const handleClickOpen = (name, price) => {
+        setOpen(true);
+        setDataProduct({ ...dataProduct, name: name, price: precioFormatter(price.toString()) })
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return (
         <div className="slider-container">
             <div className="slider-content">
-                <h2> Mas Vendidos </h2>
+                <h2 className="slider-title"> Más Vendidos </h2>
                 <div className="slider-line-decoration"></div>
                 <Slider {...settings}>
                     {
-                        products?.map(({ imageUrl, listPrice, productName, price, installments, stars }, i) => (
-                            <ProductCard
-                                image={imageUrl}
-                                key={i}
-                                listPrice={listPrice}
-                                productName={productName}
-                                price={price}
-                                quantity={installments[0]?.quantity}
-                                quantityValue={installments[0]?.value}
-                                rating={stars}
-                                precioFormatter={precioFormatter}
-                            />
-                        ))
+                        products && products
+                            .filter(searchingProducts(search))
+                            .map(({ imageUrl, listPrice, productName, price, installments, stars, productId }) => (
+                                <ProductCard
+                                    image={imageUrl}
+                                    key={productId}
+                                    listPrice={listPrice}
+                                    productName={productName}
+                                    price={price}
+                                    quantity={installments[0]?.quantity}
+                                    quantityValue={installments[0]?.value}
+                                    rating={stars}
+                                    precioFormatter={precioFormatter}
+                                    addNewProduct={addNewProduct}
+                                    handleClickOpen={handleClickOpen}
+                                />
+                            ))
                     }
                 </Slider>
+                <AlertNewProduct open={open} data={dataProduct} close={handleClose} />
             </div>
         </div>
     )
 }
-
 
 export default SliderContainer

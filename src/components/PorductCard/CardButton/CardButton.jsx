@@ -1,9 +1,9 @@
 import "./CardButton.css"
 
-export default function CardButton({ onClick }) {
+export default function CardButton({ onClick, handleClickOpen, name, price }) {
     return (
         <button
-            onClick={() => onClick()}
+            onClick={() => { onClick(); handleClickOpen(name, price) }}
             className="button"
         >
             COMPRAR
